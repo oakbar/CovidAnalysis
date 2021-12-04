@@ -1,11 +1,12 @@
+/* 
+COVID-19 Exploration and Visualization Project
+Skills Used: Aggregate functions, CTEs, Temp Tables, Casting Data Types, Joins, Creating Views
+*/
+
 Select *
 From CovidAnalysis..CovidDeaths
 where continent is not null
 order by 3,4
-
---Select *
---From CovidAnalysis..CovidVaccinations
---order by 3,4
 
 -- Select relevant data
 Select Location, date, total_cases, new_cases, total_deaths, population
@@ -16,7 +17,7 @@ order by 1,2
 -- Shows chance of dying if you contract COVID in your country
 Select Location, date, total_cases, total_deaths, (total_deaths/total_cases) * 100 as DeathPercentage
 From CovidAnalysis..CovidDeaths
--- where location like '%states%'
+where location like '%states%'
 order by 1,2
 
 -- Comparing Total Cases vs. Population
